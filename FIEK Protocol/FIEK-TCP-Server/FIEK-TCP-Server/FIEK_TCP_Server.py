@@ -23,8 +23,8 @@ def BASHKETINGELLORE(a):
     socketKlienti.sendall(str.encode(a))
 def PRINTIMI(a):
     socketKlienti.sendall(str.encode(a))
-def EMRIIKOMPJUTERIT():
-    z=socket.getfqdn(servername)
+def EMRIIKLIENTIT():
+    z="Emri i klientit eshte: "+socket.getfqdn(servername)
     socketKlienti.sendall(str.encode(z))
 def KOHA():
     y = datetime.datetime.now()
@@ -80,8 +80,8 @@ def kerkesat(op):
         BASHKETINGELLORE(opi[17:])
     elif(op[0]=="PRINTIMI"):
         PRINTIMI(opi[9:])
-    elif(op[0]=="EMRIIKOMPJUTERIT"):
-        EMRIIKOMPJUTERIT()
+    elif(op[0]=="EMRIIKLIENTIT"):
+        EMRIIKLIENTIT()
     elif(op[0]=="KOHA"):
         KOHA()
     elif(op[0]=="LOJA"):

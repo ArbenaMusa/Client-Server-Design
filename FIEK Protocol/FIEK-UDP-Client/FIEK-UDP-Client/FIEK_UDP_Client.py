@@ -11,7 +11,7 @@ port=12000
 
 with socket.socket(socket.AF_INET,socket.SOCK_DGRAM) as clientsocket:
     while True:
-        print('Operacioni (IPADRESA, NUMRIIPORTIT, BASHKETINGELLORE, PRINTIMI, EMRIIKOMPJUTERIT, KOHA, LOJA, FIBONACCI, KONVERTIMI, VERSIONIIPYTHON, VERSIONIIOS)?')
+        print('Operacioni (IPADRESA, NUMRIIPORTIT, BASHKETINGELLORE, PRINTIMI, EMRIIKLIENTIT, KOHA, LOJA, FIBONACCI, KONVERTIMI, VERSIONIIPYTHON, VERSIONIIOS)?')
         var=input().upper().encode()
         if var=='':
             break
