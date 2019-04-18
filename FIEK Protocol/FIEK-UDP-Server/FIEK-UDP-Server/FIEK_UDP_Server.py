@@ -1,6 +1,7 @@
 import socket 
 import datetime
 import sys
+import platform
 import random
 from random import choice
 
@@ -115,4 +116,3 @@ while True:
             kerkesat(message.decode())
     except:
          print("Error")
-
