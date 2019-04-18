@@ -103,7 +103,7 @@ def kerkesat(op):
 def clientthread(socketKlienti):
     try:
         while True:
-            opsioni = socketKlienti.recv(1024).decode()
+            opsioni = socketKlienti.recv(128).decode()
             kerkesat(opsioni)
         socketKlienti.close()
     except:

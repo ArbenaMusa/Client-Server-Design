@@ -17,5 +17,5 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as clientsocket:
         if var=='':
             break
         clientsocket.sendall(var)
-        r=clientsocket.recv(1024).decode()
+        r=clientsocket.recv(128).decode()
         print(repr(r))
