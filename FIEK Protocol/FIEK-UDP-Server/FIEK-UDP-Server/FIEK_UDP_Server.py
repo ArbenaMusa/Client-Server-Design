@@ -9,7 +9,7 @@ def IPADRESA():
     z="IP Adresa e klientit eshte: "+ address[0]
     serversocket.sendto(str.encode(z), address)
 def NUMRIIPORTIT():
-    z="Klienti eshte duke perdorur portin "+ address[1]
+    z="Klienti eshte duke perdorur portin "+ str(address[1])
     serversocket.sendto(str.encode(z), address)
 def BASHKETINGELLORE(a):
     nribashketingelloreve = 0
@@ -23,7 +23,10 @@ def BASHKETINGELLORE(a):
 def PRINTIMI(a):
     serversocket.sendto(str.encode(a), address)
 def EMRIIKLIENTIT():
-    z="Emri i klientit eshte: "+socket.getfqdn(servername)
+    try:
+        z="Emri i klientit eshte: "+socket.getfqdn(servername)
+    except:
+        z="Emri i klientit nuk mund te gjindet."
     serversocket.sendto(str.encode(z), address)
 def KOHA():
     y = datetime.datetime.now()
@@ -41,7 +44,7 @@ def FIBONACCI(n):
     a,b = 0,1
     for i in range(n):
         a,b = b, a+b
-    serversocket.sendto(str.encode(a), address)
+    serversocket.sendto(str.encode(str(a)), address)
 def KONVERTIMI(a,b):
     if(a=="KILOWATTOHORSEPOWER"):
         z=int(b)*1.34102209
@@ -57,7 +60,7 @@ def KONVERTIMI(a,b):
         z=int(b)/3.78541178
     else:
         z="Nuk eshte shkruar mire kerkesa per konvertim."
-    serversocket.sendto(str.encode(z), address)
+    serversocket.sendto(str.encode(str(z)), address)
 def VERSIONIIPYTHON():
     z=sys.version
     serversocket.sendto(str.encode(z), address)
@@ -65,7 +68,7 @@ def VERSIONIIOS():
     z=platform.machine()+"    "+platform.platform()+"    "+platform.node()+"    "+platform.processor()
     serversocket.sendto(str.encode(z), address)
 def NOFUN():
-    z='Nuk keni shenuar funksion valid.'
+    z=' '
     serversocket.sendto(str.encode(z), address)
 
 def kerkesat(op):
@@ -86,7 +89,7 @@ def kerkesat(op):
     elif(op[0]=="LOJA"):
         LOJA()
     elif(op[0]=="FIBONACCI"):
-        FIBONACCI(op[1])
+        FIBONACCI(int(op[1]))
     elif(op[0]=="KONVERTIMI"):
         KONVERTIMI(op[1], op[2])
     elif(op[0]=="VERSIONIIPYTHON"):

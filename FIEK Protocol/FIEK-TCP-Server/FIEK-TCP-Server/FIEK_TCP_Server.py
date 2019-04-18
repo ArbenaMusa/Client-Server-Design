@@ -24,7 +24,10 @@ def BASHKETINGELLORE(a):
 def PRINTIMI(a):
     socketKlienti.sendall(str.encode(a))
 def EMRIIKLIENTIT():
-    z="Emri i klientit eshte: "+socket.getfqdn(servername)
+    try:
+        z="Emri i klientit eshte: "+socket.getfqdn(servername)
+    except:
+        z="Emri i klientit nuk mund te gjindet."
     socketKlienti.sendall(str.encode(z))
 def KOHA():
     y = datetime.datetime.now()
@@ -42,7 +45,7 @@ def FIBONACCI(n):
     a,b = 0,1
     for i in range(n):
         a,b = b, a+b
-    socketKlienti.sendall(str.encode(a))
+    socketKlienti.sendall(str.encode(str(a)))
 def KONVERTIMI(a,b):
     if(a=="KILOWATTOHORSEPOWER"):
         z=int(b)*1.34102209
@@ -66,7 +69,7 @@ def VERSIONIIOS():
     z=platform.machine()+"    "+platform.platform()+"    "+platform.node()+"    "+platform.processor()
     socketKlienti.sendall(str.encode(z))
 def NOFUN():
-    z='Nuk keni shenuar funksion valid.'
+    z=' '
     socketKlienti.sendall(str.encode(str(z)))
 
 def kerkesat(op):
@@ -87,7 +90,7 @@ def kerkesat(op):
     elif(op[0]=="LOJA"):
         LOJA()
     elif(op[0]=="FIBONACCI"):
-        FIBONACCI(op[1])
+        FIBONACCI(int(op[1]))
     elif(op[0]=="KONVERTIMI"):
         KONVERTIMI(op[1],op[2])
     elif(op[0]=="VERSIONIIPYTHON"):
