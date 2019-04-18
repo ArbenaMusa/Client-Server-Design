@@ -1,7 +1,6 @@
 import socket 
 import datetime
 import sys
-import os
 import platform
 import random
 from random import choice
@@ -40,13 +39,10 @@ def LOJA():
     z=z+')jane 7 numra te rastesishem nga 49.'
     socketKlienti.sendall(str.encode(z))
 def FIBONACCI(n):
-    a=0
-    b=1
-    for i in range(0, n):
-        c=a
-        a=b
-        b=c+b
-    return b
+    a,b = 0,1
+    for i in range(n):
+        a,b = b, a+b
+    socketKlienti.sendall(str.encode(a))
 def KONVERTIMI(a,b):
     if(a=="KILOWATTOHORSEPOWER"):
         z=int(b)*1.34102209
@@ -74,15 +70,16 @@ def NOFUN():
     socketKlienti.sendall(str.encode(str(z)))
 
 def kerkesat(op):
+    opi=op
     op = op.split()
     if(op[0]=="IPADRESA"):
         IPADRESA()
     elif(op[0]=="NUMRIIPORTIT"):
         NUMRIIPORTIT()
     elif(op[0]=="BASHKETINGELLORE"):
-        BASHKETINGELLORE(op[1])
+        BASHKETINGELLORE(opi[17:])
     elif(op[0]=="PRINTIMI"):
-        PRINTIMI(op[1])
+        PRINTIMI(opi[9:])
     elif(op[0]=="EMRIIKOMPJUTERIT"):
         EMRIIKOMPJUTERIT()
     elif(op[0]=="KOHA"):
@@ -90,10 +87,9 @@ def kerkesat(op):
     elif(op[0]=="LOJA"):
         LOJA()
     elif(op[0]=="FIBONACCI"):
-        a = FIBONACCI(op[1])
-        socketKlienti.sendall(str.encode(str(a)))
+        FIBONACCI(op[1])
     elif(op[0]=="KONVERTIMI"):
-        KONVERTIMI(op[1], op[2])
+        KONVERTIMI()
     elif(op[0]=="VERSIONIIPYTHON"):
         VERSIONIIPYTHON()
     elif(op[0]=="VERSIONIIOS"):
