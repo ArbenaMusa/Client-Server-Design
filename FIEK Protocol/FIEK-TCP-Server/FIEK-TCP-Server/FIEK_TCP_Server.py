@@ -89,7 +89,7 @@ def kerkesat(op):
     elif(op[0]=="FIBONACCI"):
         FIBONACCI(op[1])
     elif(op[0]=="KONVERTIMI"):
-        KONVERTIMI()
+        KONVERTIMI(op[1],op[2])
     elif(op[0]=="VERSIONIIPYTHON"):
         VERSIONIIPYTHON()
     elif(op[0]=="VERSIONIIOS"):
