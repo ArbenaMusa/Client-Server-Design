@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "FIEK-UDP-Client", "FIEK-UDP-Client\FIEK-UDP-Client.pyproj", "{B0F659A2-6A0B-4D3C-914F-091DC9A01EBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0F659A2-6A0B-4D3C-914F-091DC9A01EBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0F659A2-6A0B-4D3C-914F-091DC9A01EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CCCB1025-C6A1-49DB-96BA-9A283892A76A}
+	EndGlobalSection
+EndGlobal
