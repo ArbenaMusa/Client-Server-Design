@@ -106,7 +106,7 @@ def clientthread(socketKlienti):
             kerkesat(opsioni)
         socketKlienti.close()
     except:
-        print("Error")
+        print("Ka ndodhur nje gabim gjate marrjes se kerkeses nga klienti!")
 
 servername ='localhost'
 serverport = 12000
@@ -115,16 +115,16 @@ serversocket.bind((servername, serverport))
 print('================================================================================================')
 print('Ky eshte programi FIEK-TCP Server.')
 print('Serveri eshte duke punuar ne portin '+ str(serverport)+'. Ky port mund te ndryshohet nga klienti sipas nevojes.')
-serversocket.listen()
 print('Serveri eshte gati per te pranuar kerkesa.')
 print('================================================================================================')
 
 while True:
     try:
+        serversocket.listen()
         socketKlienti, addr = serversocket.accept()
         print("Klienti i lidhur ne portin "+str(addr[1]))
         start_new_thread(clientthread, (socketKlienti, ))
     except:
-        print("Error 2")
+        print("Ka ndodhur nje gabim ne krijim e socketKlientit!")
 
 serversocket.close()
